@@ -71,9 +71,9 @@ torchaudio.save("residual.wav", result.residual.cpu(), sample_rate)  # Everythin
 
 SAM-Audio supports three types of prompts:
 
-1. **Text Prompting**: Describe the sound you want to isolate using natural language
+1. **Text Prompting**: Describe the sound you want to isolate using natural language. To match training, please use lowercase and NP/VP format for text.
    ```python
-   processor(audios=[audio], descriptions=["A man speaking"])
+   processor(audios=[audio], descriptions=["man speaking"])
    ```
 
 2. **Visual Prompting**: Use video frames and masks to isolate sounds associated with visual objects
@@ -83,7 +83,7 @@ SAM-Audio supports three types of prompts:
 
 3. **Span Prompting**: Specify time ranges where the target sound occurs
    ```python
-   processor(audios=[audio], descriptions=["A horn honking"], anchors=[[["+", 6.3, 7.0]]])
+   processor(audios=[audio], descriptions=["car honking"], anchors=[[["+", 6.3, 7.0]]])
    ```
 
 See the [examples](examples) directory for more detailed examples
